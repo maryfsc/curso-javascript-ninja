@@ -22,13 +22,13 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function settingNewValue(variable, val) { 
-  variable = val;
-  return 'O valor da variável agora é ' + variable; 
-}
+function settingNewValue() { 
+  newVar = 25;
+  return 'O valor da variável agora é ' + newVar; 
+} // 1
 
 // Invoque a função criada acima.
-settingNewValue(newVar, 25);
+settingNewValue();
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* 'O valor da variável agora é 25' */
@@ -43,9 +43,8 @@ Crie uma função com as seguintes características:
 function multiplyingElements(a, b, c) {
   if (a === undefined || b === undefined || c === undefined) {
     return 'Preencha todos os valores corretamente!'; 
-  } else {
-    return (a * b * c) + 2;
   }
+  return (a * b * c) + 2; // 2
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
