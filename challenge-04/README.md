@@ -76,7 +76,7 @@ carro.obterCor = function() {
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
 carro.obterModelo = function() {
-  return 'carro.modelo';
+  return carro.modelo;
 }
 
 /*
