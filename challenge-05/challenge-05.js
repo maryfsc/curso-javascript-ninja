@@ -74,11 +74,7 @@ function book(name) {
         }
     }
     
-    if (!name) {
-        return bookInfo;
-    }
-    
-    return bookInfo[name];
+    return !name ? bookInfo : bookInfo[name];
 }
 
 /*
