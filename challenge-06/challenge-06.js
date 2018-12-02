@@ -33,35 +33,21 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(position) {
-    switch(position) {
-        case 1: 
-        console.log('O time que está em 1ª posição é o ' + teams[0] + '.');
-        break;
-        case 2:
-        console.log('O time que está em 2ª posição é o ' + teams[1] + '.');
-        break;
-        case 3:
-        console.log('O time que está em 3ª posição é o ' + teams[2] + '.');
-        break;
-        case 4:
-        console.log('O time que está em 4ª posição é o ' + teams[3] + '.');
-        break;
-        case 5:
-        console.log('O time que está em 5ª posição é o ' + teams[4] + '.');
-        break;
-        default:
-        console.log('Não temos a informação do time que está nessa posição.');        
+    if (position < 1 || position > 5) {
+        return 'Não temos a informação do time que está nessa posição.'
     }
+
+    return 'O time que está em ' + position + 'º lugar é o ' + teams[position - 1] + '.'
 }
 
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
-showTeamPosition(3); // O time que está em 3ª posição é o Time do Naruto.
-showTeamPosition(4); // O time que está em 4ª posição é o Time do Tsubasa.
-showTeamPosition(5); // O time que está em 5ª posição é o Time da Sakura.
-showTeamPosition(10); // Não temos a informação do time que está nessa posição.
+console.log(showTeamPosition(3)); // O time que está em 3ª posição é o Time do Naruto.
+console.log(showTeamPosition(4)); // O time que está em 4ª posição é o Time do Tsubasa.
+console.log(showTeamPosition(5)); // O time que está em 5ª posição é o Time da Sakura.
+console.log(showTeamPosition(10)); // Não temos a informação do time que está nessa posição.
 
 /*
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
@@ -70,8 +56,7 @@ repetição "while".
 var counter = 20;
 
 while(counter <= 30) {
-    console.log(counter);
-    counter++;
+    console.log(counter++);
 }
 
 /*
@@ -87,35 +72,39 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
+    var hexa;
+
     switch(color) {
         case 'black':
-        console.log('O hexadecimal para a cor preta é #000000.');
-        break;
+            hexa = '#000000';
+            break;
         case 'white':
-        console.log('O hexadecimal para a cor branca é #FFFFFF.');
-        break;
+            hexa = '#FFFFFF';
+            break;
         case 'red':
-        console.log('O hexadecimal para a cor vermelha é #FC0905.');
-        break;
+            hexa = '#FC0905';
+            break;
         case 'pink':
-        console.log('O hexadecimal para a cor rosa é #fc057c.');
-        break;
+            hexa = '#fc057c';
+            break;
         case 'blue':
-        console.log('O hexadecimal para a cor azul é #4705fc.');
-        break;
+            hexa = '#4705fc';
+            break;
         default:
-        console.log('Não temos o equivalente hexadecimal para ' + color + '.')
+            return 'Não temos o equivalente hexadecimal para ' + color + '.';
     }
+
+    return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('black'); // O hexadecimal para a cor preta é #000000.
-convertToHex('pink'); // O hexadecimal para a cor rosa é #fc057c.
-convertToHex('red'); // O hexadecimal para a cor vermelha é #FC0905.
-convertToHex('blue'); // O hexadecimal para a cor azul é #4705fc.
-convertToHex('white'); // O hexadecimal para a cor branca é #FFFFFF.
-convertToHex('yellow'); // Não temos o equivalente hexadecimal para yellow.
-convertToHex('brown'); // Não temos o equivalente hexadecimal para brown.
-convertToHex('grey'); // Não temos o equivalente hexadecimal para grey.
+console.log(convertToHex('black')); // O hexadecimal para a cor preta é #000000.
+console.log(convertToHex('pink')); // O hexadecimal para a cor rosa é #fc057c.
+console.log(convertToHex('red')); // O hexadecimal para a cor vermelha é #FC0905.
+console.log(convertToHex('blue')); // O hexadecimal para a cor azul é #4705fc.
+console.log(convertToHex('white')); // O hexadecimal para a cor branca é #FFFFFF.
+console.log(convertToHex('yellow')); // Não temos o equivalente hexadecimal para yellow.
+console.log(convertToHex('brown')); // Não temos o equivalente hexadecimal para brown.
+console.log(convertToHex('grey')); // Não temos o equivalente hexadecimal para grey.
