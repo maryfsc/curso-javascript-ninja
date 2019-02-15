@@ -12,7 +12,7 @@
   do {
     console.log('Entrou ao menos uma vez!')
   } 
-  while (once == true);
+  while (once);
 
   /*
   Crie um objeto chamado `person`, que receba as seguintes propriedades:
@@ -36,7 +36,7 @@
   'The person has [COUNTER] properties'
   */
   var counter = 0;
-  for (prop in person) {
+  for (var prop in person) {
     counter++;
     console.log('The ' + prop + ' of person is ' + person[prop]);
   }
@@ -51,7 +51,7 @@
   'The person has more than 25 years old? [TRUE/FALSE]'
   */
   function moreThan(age) {
-    return person.age;
+    return person.age > age;
   }
 
   console.log('The person has more than 25 years old? ' + moreThan(25));
@@ -66,7 +66,7 @@
   for (var i = 0; i < 20; i++) {
     numbers.push(i);
 
-    if (i >= 10){
+    if (i > 10){
       break;
     }
   }
