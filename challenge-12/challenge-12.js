@@ -100,6 +100,5 @@
   /*
   Mostre todos os itens do array acima, odenados alfabéticamente.
   */
-  // ?
 
 })()
