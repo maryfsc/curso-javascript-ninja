@@ -21,8 +21,7 @@
   Crie uma variável chamada `brasil`, que irá receber as duas regiões
   concatenadas. Mostre o `brasil` no console.
   */
-  var array2 = [];
-  var brasil = array2.concat(sul, sudeste)
+  var brasil = sul.concat(sudeste);
   console.log( '\nAlguns Estados do Brasil:', brasil );
 
   /*
@@ -72,9 +71,7 @@
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
   ficar no mesmo nível que os estados já existentes, não em um array separado.
   */
-  nordeste.forEach(estado => {
-    return brasil.push(estado);
-  })
+  brasil = brasil.concat(nordeste);
 
   /*
   Mostre no console os estados em `newSudeste`.
@@ -109,17 +106,16 @@
   - "Sim, todos os estados tem mais de 7 letras!"
   Senão, mostre no console:
   - "Nem todos os estados tem mais de 7 letras!"
-  */
-  function isLength7(country) {
-    var check = country.every(estado => {
-      return estado.length >= 7;
+  */  
+    var every = brasil.every(estado => {
+      return estado.length > 7;
     });
 
-    return check ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!';
-  }
 
-
-  console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?', isLength7(brasil) );
+  console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?', 
+    every
+    ? 'Sim, todos os estados tem mais de 7 letras!' 
+    : 'Nem todos os estados tem mais de 7 letras!' );
 
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -129,13 +125,14 @@
   Senão, mostrar a frase:
   - "Ceará não foi incluído :("
   */
-  var findCeara = brasil.filter(estado => {
-    return estado == 'Ceará';
-  });
-
-  var isCearaIncluded = findCeara != [] ? 'Ceará está incluído!' : 'Ceará não foi incluído :(';
-
-  console.log( '\nCeará está incluído em `brasil`?' , isCearaIncluded);
+  var some = brasil.some(estado => {
+    return estado === 'Ceará';
+  }) 
+  console.log( '\nCeará está incluído em `brasil`?' , 
+    some
+    ? "Ceará está incluído!"
+    : "Ceará não foi incluído :("
+    );
 
   /*
   Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -143,8 +140,8 @@
   - "[ESTADO] pertence ao Brasil."
   Atribua o novo array a uma variável chamada `map`.
   */
-  var map = newBrasil.map((estado, index) => {
-    return { id: index + 1, estado: newBrasil[index].estado + ' pertence ao Brasil.' };
+  var map = newBrasil.map(estado => {
+    return { id: estado.id + 1, estado: estado.estado + ' pertence ao Brasil.' };
   });
 
   /*
@@ -166,8 +163,3 @@
   console.log( '\nEstados com ID par:', filter );
   // ?
 })()
-
-
-/* dúvidas mentoria:
-1) posso usar uma chave SSH em casa pra subir repos pro meu github pessoal? não vai dar ruim, em questão de segurança, por ter email associado ao perfil da Creditas?
-2) o conceito de encadeamento em Js faz parte do paradigma funcional? */
