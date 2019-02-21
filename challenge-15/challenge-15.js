@@ -29,16 +29,16 @@
     
     this.getFullName = function() {
       return this.name + ' ' + this.lastName;
-    }
+    };
 
     this.getAge = function() {
       return this.age;
-    }
+    };
 
     this.addAge = function() {
       this.age += arguments[0];
       return this;
-    }
+    };
   }
 
   /*
@@ -83,12 +83,9 @@
   */
   console.log( '\nNova idade das pessoas:' );
   
-  mary.addAge(2);
-  console.log(mary.getFullName() + ' agora tem ' + mary.getAge() + ' anos.');
+  console.log(mary.getFullName() + ' agora tem ' + mary.addAge(2).getAge() + ' anos.');
 
-  fox.addAge(3);
-  console.log(fox.getFullName() + ' agora tem ' + fox.getAge() + ' anos.');
+  console.log(fox.getFullName() + ' agora tem ' + fox.addAge(3).getAge() + ' anos.');
 
-  ariel.addAge(4);
-  console.log(ariel.getFullName() + ' agora tem ' + ariel.getAge() + ' anos.');
+  console.log(ariel.getFullName() + ' agora tem ' + ariel.addAge(4).getAge() + ' anos.');
 })()
